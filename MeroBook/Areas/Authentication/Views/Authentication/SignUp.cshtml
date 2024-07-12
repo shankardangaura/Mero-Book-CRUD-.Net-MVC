@@ -1,0 +1,84 @@
+﻿ @model MeroBook.Models.Authentication
+@{
+    Layout = null;
+}
+<title>Sign up - Mero Book</title>
+<!-- CSS files -->
+<script src="~/js/tabler.min.js?1684106062" defer></script>
+<script src="~/js/demo.min.js?1684106062" defer></script>
+<script src="~/js/demo-theme.min.js?1684106062"></script>
+<link href="~/css/tabler.min.css?1684106062" rel="stylesheet" />
+<link href="~/css/tabler-flags.min.css?1684106062" rel="stylesheet" />
+<link href="~/css/tabler-payments.min.css?1684106062" rel="stylesheet" />
+<link href="~/css/tabler-vendors.min.css?1684106062" rel="stylesheet" />
+<link href="~/css/demo.min.css?1684106062" rel="stylesheet" />
+<link href="~/css/inter.css" rel="stylesheet" />
+<style>
+    :root {
+        --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    }
+
+    body {
+        font-feature-settings: "cv03", "cv04", "cv11";
+    }
+</style>
+
+<div class="page page-center">
+    <div class="container container-tight py-4">
+        <form class="card card-md" id="signupIndividual" autocomplete="off" novalidate>
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4" style="color:#464cfa">Create Bulk M Account</h2>
+                <div class="mb-3">
+                    @Html.HiddenFor(x => x.userId)
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" value="@Model.userName" placeholder="Enter name">
+                    @* <span class="field">
+                    @Html.TextBoxFor(m => m.userName, new { @required = "required" })
+                    </span> *@
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control" value="@(Model.Email)" placeholder="your@email.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <div class="input-group input-group-flat">
+                        <input type="password" class="form-control" id="passwordField" value="@(Model.Password)" placeholder="Password" autocomplete="off">
+                        <span class="input-group-text toggle-password" title="Show password" data-bs-toggle="tooltip">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="address" class="form-control" value="@(Model.address)" placeholder="Enter Adress">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="contact" class="form-control" value="@(Model.phone)" placeholder="Enter phone number">
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary w-100">Create new account</button>
+                </div>
+                <div class="text-center text-muted mt-3">
+                    Already have account? <a class="tox-button--naked" onclick="location.href='@Url.Action("Login","Authentication")'" tabindex="-1" style="font-style:italic;color:#464cfa;">Sign in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.querySelector(".toggle-password");
+        const passwo
+        rdField = document.getElementById("passwordField");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+            passwordField.setAttribute("type", type);
+        });
+    });
+</script>
+
