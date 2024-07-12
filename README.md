@@ -1,5 +1,5 @@
 # Mero-Book-CRUD-.Net-MVC
-This is Online Book store. This is prototype based, Only CRUD operations are performed. 
+This is Online Book store Version 1. This is prototype based, Only CRUD operations are performed. 
 
 #In this project MySQL (SSMS) is used for Database.
 
